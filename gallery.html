@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bella Bites | Gallery</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Explore the Bella Bites gallery — our signature coffee, desserts, and beverages crafted with passion and luxury." />
+    <meta name="keywords"
+        content="Bella Bites gallery, café images, desserts photography, coffee gallery, bakery, luxury café" />
+    <meta name="author" content="Bella Bites Café" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/stylesheet/style.css" />
+
+    <link rel="icon" href="assets/images/favicon.ico" />
+</head>
+
+<body>
+    <!-- ================= BELLA BITES NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top py-3">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Left: Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="Bella Bites Logo" height="50" class="me-2" />
+                <span class="fw-bold text-gold fs-4">Bella Bites</span>
+            </a>
+
+            <!-- Center: Navigation Links -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars text-gold fs-3"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase fw-semibold">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right: Cart Icon -->
+            <div class="cart-icon position-relative d-none d-lg-block">
+                <button class="btn btn-link text-gold position-relative p-0" id="cartButton" aria-label="View cart">
+                    <i class="fa-solid fa-bag-shopping fs-4"></i>
+                    <span
+                        class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-gold text-black"
+                        id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- ================= END NAVBAR ================= -->
+
+    <!-- Gallery Section -->
+    <section class="gallery-section py-5 mt-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Gallery</h2>
+            <div class="row g-4">
+
+                <!-- Gallery Items -->
+
+                <section id="gallery" class="container py-5">
+  <div class="row g-4">
+
+    <!-- 1 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery1.jpg" data-lightbox="bella-gallery" data-title="Luxury Café Interior">
+        <img src="assets/images/gallery1.jpg" loading="lazy" alt="Bella Bites café luxury interior seating and decor" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Luxury Café Interior</figcaption>
+    </figure>
+
+    <!-- 2 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery2.jpg" data-lightbox="bella-gallery" data-title="Barista at Work">
+        <img src="assets/images/gallery2.jpg" loading="lazy" alt="Barista pouring coffee with latte art at Bella Bites café" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Barista at Work</figcaption>
+    </figure>
+
+    <!-- 3 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery3.jpg" data-lightbox="bella-gallery" data-title="Dessert Display">
+        <img src="assets/images/gallery3.jpg" loading="lazy" alt="Assortment of cakes and desserts at Bella Bites café counter" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Dessert Display</figcaption>
+    </figure>
+
+    <!-- 4 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery4.jpg" data-lightbox="bella-gallery" data-title="Coffee Pouring">
+        <img src="assets/images/gallery4.jpg" loading="lazy" alt="Close-up of coffee pouring into cup with crema" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Coffee Pouring</figcaption>
+    </figure>
+
+    <!-- 5 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery5.jpg" data-lightbox="bella-gallery" data-title="Café Exterior">
+        <img src="assets/images/gallery5.jpg" loading="lazy" alt="Bella Bites café exterior facade with signage" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Café Exterior</figcaption>
+    </figure>
+
+    <!-- 6 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery6.jpg" data-lightbox="bella-gallery" data-title="Coffee & Dessert Flatlay">
+        <img src="assets/images/gallery6.jpg" loading="lazy" alt="Flatlay of coffee and dessert on rustic wooden table" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Coffee & Dessert Flatlay</figcaption>
+    </figure>
+
+    <!-- 7 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery7.jpg" data-lightbox="bella-gallery" data-title="Happy Customer">
+        <img src="assets/images/gallery7.jpg" loading="lazy" alt="Smiling customer enjoying coffee at Bella Bites café" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Happy Customer</figcaption>
+    </figure>
+
+    <!-- 8 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery8.jpg" data-lightbox="bella-gallery" data-title="Latte Art Closeup">
+        <img src="assets/images/gallery8.jpg" loading="lazy" alt="Closeup of latte art heart pattern in coffee cup" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Latte Art Closeup</figcaption>
+    </figure>
+
+    <!-- 9 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery9.jpg" data-lightbox="bella-gallery" data-title="Evening Ambience">
+        <img src="assets/images/gallery9.jpg" loading="lazy" alt="Warm evening lighting at Bella Bites café lounge" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Evening Ambience</figcaption>
+    </figure>
+
+    <!-- 10 -->
+    <figure class="col-6 col-md-4 gallery-item">
+      <a href="assets/images/gallery10.jpg" data-lightbox="bella-gallery" data-title="Dessert Platter">
+        <img src="assets/images/gallery10.jpg" loading="lazy" alt="Luxury dessert platter featuring cakes and pastries" class="img-fluid rounded shadow-sm" />
+      </a>
+      <figcaption class="text-center mt-2 text-muted">Dessert Platter</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body text-center">
+                    <img src="" alt="Gallery Preview" id="lightboxImage" class="img-fluid rounded" />
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-black text-center text-muted">
+        <div class="container">
+            <img src="assets/images/logo.png" alt="Bella Bites Logo" height="40" class="mb-3" />
+            <p class="mb-0">© 2025 Bella Bites | Crafted with ❤️ and Coffee</p>
+        </div>
+    </footer>
+
+    <!-- ================= CART SIDE DRAWER ================= -->
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-drawer-header d-flex justify-content-between align-items-center px-3 py-3">
+            <h5 class="m-0 fw-bold text-gold">Your Cart</h5>
+            <button id="closeCart" class="btn-close btn-close-white" aria-label="Close"></button>
+        </div>
+
+        <div id="cartItems" class="cart-drawer-body px-3 py-2">
+            <p class="text-center text-muted mt-3">Your cart is empty.</p>
+        </div>
+
+        <div class="cart-drawer-footer px-3 py-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fw-semibold text-beige">Total:</span>
+                <span id="cartTotal" class="fw-bold text-gold">Rs. 0</span>
+            </div>
+            <button class="btn btn-gold w-100" id="checkoutBtn" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+
+    <!-- Bootstrap + JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Lightbox Script -->
+    <script>
+        const lightboxModal = document.getElementById("lightboxModal");
+        lightboxModal.addEventListener("show.bs.modal", (event) => {
+            const button = event.relatedTarget;
+            const imgSrc = button.getAttribute("data-img");
+            const lightboxImage = document.getElementById("lightboxImage");
+            lightboxImage.src = imgSrc;
+        });
+    </script>
+
+    <!-- ======================= CHECKOUT MODAL START ======================= -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true"
+        data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-3">
+
+                <!-- Header -->
+                <div class="modal-header border-0 bg-dark text-white">
+                    <h5 class="modal-title fw-semibold" id="checkoutModalLabel">
+                        <i class="fa-solid fa-credit-card me-2 text-warning"></i> Checkout
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="closeCheckout()"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <!-- Left: Order Summary -->
+                        <div class="col-lg-6 mb-4 mb-lg-0 border-end">
+                            <h6 class="fw-bold mb-3 text-uppercase text-secondary">Your Order</h6>
+                            <div id="checkoutSummary" class="small text-muted"></div>
+                            <hr />
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0 fw-semibold text-dark">Total:</h6>
+                                <span id="checkoutTotal" class="fw-bold fs-5 text-warning">Rs. 0</span>
+                            </div>
+                        </div>
+
+                        <!-- Right: Customer Info -->
+                        <div class="col-lg-6">
+                            <h6 class="fw-bold mb-3 text-uppercase text-secondary">Billing Details</h6>
+                            <form id="checkoutForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" id="name" class="form-control" placeholder="Enter your name"
+                                        required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" class="form-control" placeholder="name@example.com"
+                                        required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="phone" class="form-control" placeholder="+92 300 0000000"
+                                        required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Delivery Address</label>
+                                    <textarea id="address" class="form-control" rows="2" placeholder="Street, City"
+                                        required></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer border-0 justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal"
+                        onclick="closeCheckout()">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-warning text-dark fw-semibold px-4" onclick="submitCheckout()">
+                        <i class="fa-solid fa-check me-2"></i> Confirm Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======================= CHECKOUT MODAL END ======================= -->
+
+
+</body>
+
+</html>

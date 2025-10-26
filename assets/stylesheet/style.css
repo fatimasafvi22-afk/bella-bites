@@ -1,0 +1,489 @@
+/* =========================================
+   Bella Bites — Luxury Café Theme
+   Palette: Charcoal #1A1A1A | Gold #C9A646 | Beige #F5EDE0
+   Typography: Playfair Display (Headings) + Poppins (Body)
+   ========================================= */
+
+:root {
+  --charcoal: #1a1a1a;
+  --gold: #c9a646;
+  --beige: #f5ede0;
+  --white: #ffffff;
+  --transition: all 0.4s ease;
+}
+
+/* ------------------ GLOBAL ------------------ */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--charcoal);
+  color: var(--beige);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Playfair Display", serif;
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* Scrollbar (for luxury touch) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gold);
+  border-radius: 5px;
+}
+
+/* ------------------ NAVBAR ------------------ */
+
+/* Navbar styling refinements */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(201, 166, 70, 0.2);
+  z-index: 1000;
+}
+
+.navbar-brand span {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+  color: var(--beige);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.6px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--gold);
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Cart button */
+.cart-icon button {
+  text-decoration: none;
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.cart-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.45rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+  .cart-icon {
+    position: absolute;
+    right: 70px;
+    top: 10px;
+  }
+
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.98);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .navbar-nav .nav-item {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+}
+
+/* ================= CART DRAWER ================= */
+
+/* CART DRAWER STYLES */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100vh;
+  background-color: #111;
+  color: #fff;
+  z-index: 1050;
+  transition: right 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1049;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.cart-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-gold {
+  background-color: #d4af37;
+  color: #000;
+  border: none;
+  transition: 0.3s;
+}
+.btn-gold:hover {
+  background-color: #b89628;
+  color: #000;
+}
+
+
+/* Overlay behind drawer */
+/* .cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  z-index: 1045;
+}
+
+.cart-overlay.active {
+  opacity: 1;
+  visibility: visible;
+} */
+
+/* Scrollbar for drawer */
+.cart-drawer-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-drawer-body::-webkit-scrollbar-thumb {
+  background-color: var(--gold);
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .cart-drawer {
+    width: 100%;
+  }
+}
+
+
+
+/* ------------------ HERO SECTION ------------------ */
+
+.hero-section {
+  position: relative;
+  background-color: var(--charcoal);
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+/* ------------------ GALLERY ------------------ */
+
+.gallery-section {
+  background-color: var(--charcoal);
+}
+
+.gallery-item {
+  cursor: pointer;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition: var(--transition);
+  display: block;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(201, 166, 70, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-overlay .btn {
+  background-color: var(--white);
+  color: var(--charcoal);
+  border: none;
+  border-radius: 50%;
+  padding: 0.7rem 0.8rem;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.gallery-overlay .btn:hover {
+  background-color: var(--gold);
+  color: var(--white);
+}
+
+/* Lightbox Modal */
+.modal-content {
+  background: transparent;
+  border: none;
+}
+
+.modal-body img {
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+
+.modal-body img:hover {
+  transform: scale(1.02);
+}
+
+.btn-close-white {
+  filter: invert(1);
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.btn-close-white:hover {
+  opacity: 1;
+}
+
+/* ================= FOOTER SECTION ================= */
+footer {
+  background-color: #111; /* Rich black base */
+  color: #cfcfcf;
+  text-align: center;
+  padding: 60px 0 30px;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.3px;
+}
+
+/* Logo styling */
+footer img {
+  height: 55px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.9);
+}
+footer img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Text styling */
+footer p {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Subtle gold accent line on top */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background-color: #d4af37; /* Gold accent */
+  border-radius: 2px;
+}
+
+/* Hover link (if any future footer links) */
+footer a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 0 25px;
+  }
+  footer img {
+    height: 45px;
+  }
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================= CHECKOUT MODAL ================= */
+.checkout-modal {
+  background: rgba(20, 20, 20, 0.96);
+  color: var(--beige);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 166, 70, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.checkout-summary {
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 0;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.checkout-item img {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 0.8rem;
+}
+
+.checkout-item h6 {
+  margin-bottom: 0;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.checkout-item small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-gold {
+  background-color: var(--gold);
+  color: var(--charcoal);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  transition: var(--transition);
+}
+
+.btn-gold:hover {
+  background-color: #e1c36a;
+}
+
+@media (max-width: 576px) {
+  .checkout-item img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+
+/* ------------------ RESPONSIVE ------------------ */
+
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item img {
+    border-radius: 8px;
+  }
+
+  .gallery-overlay .btn {
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}

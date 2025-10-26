@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Bites | Luxury Café & Desserts</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Bella Bites - A luxury café serving handcrafted coffee, desserts, and fine bites in an elegant atmosphere. Order online or visit us today.">
+  <meta name="keywords"
+    content="Bella Bites, luxury café, coffee, desserts, fine dining, bakery, cappuccino, cheesecake">
+  <meta property="og:title" content="Bella Bites – Luxury Café & Desserts">
+  <meta property="og:description"
+    content="Indulge in Bella Bites’ handcrafted coffee and desserts, served with love and elegance.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/stylesheet/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <style>
+    /* ================= HERO VIDEO STYLING ================= */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      /* dark overlay for readability */
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* ================= ABOUT SECTION ================= */
+    .about {
+      background-color: #f8f6f2;
+      /* soft beige tone */
+      color: #2b2b2b;
+      position: relative;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Decorative background glow */
+    .about::before,
+    .about::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .about::before {
+      top: 10%;
+      left: -5%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #d4af37 0%, transparent 70%);
+    }
+
+    .about::after {
+      bottom: -5%;
+      right: -5%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #b38b2e 0%, transparent 70%);
+    }
+
+    /* Title Styling */
+    .about .section-title {
+      font-family: "Playfair Display", serif;
+      color: #d4af37;
+      font-size: 2.5rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #d4af37;
+      margin: 0.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* Paragraph Styling */
+    .about p {
+      color: #6c757d;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 1.5rem auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Animation on Scroll */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about .section-title,
+    .about p {
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .about .section-title {
+      animation-delay: 0.2s;
+    }
+
+    .about p {
+      animation-delay: 0.4s;
+    }
+
+    /* ================= MENU SECTION ================= */
+    .menu {
+      background-color: #f8f6f2;
+      /* soft beige */
+      position: relative;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Section Title */
+    .menu .section-title {
+      font-family: "Playfair Display", serif;
+      color: #d4af37;
+      font-size: 2.5rem;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .menu .section-title::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 3px;
+      background-color: #d4af37;
+      margin: 0.75rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* Menu Card Styling */
+    .menu-item {
+      background-color: #fff;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Card Image */
+    .menu-item img {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    /* Hover Effects */
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Card Body */
+    .menu-item .card-body {
+      padding: 1.5rem 1rem;
+    }
+
+    .menu-item .card-title {
+      font-family: "Playfair Display", serif;
+      color: #2b2b2b;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-item .card-text {
+      color: #6c757d;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .menu-item .price {
+      color: #d4af37;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Add to Cart Button */
+    .btn-gold {
+      background-color: #d4af37;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+      border-radius: 50px;
+      padding: 0.5rem 1.5rem;
+    }
+
+    .btn-gold:hover {
+      background-color: #b9932e;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Decorative Gradient Overlay (Subtle) */
+    .menu::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .menu::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      right: -50px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(185, 147, 46, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    /* Fade-up Animation */
+    @keyframes fadeUpMenu {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .menu-item {
+      opacity: 0;
+      animation: fadeUpMenu 0.8s ease forwards;
+    }
+
+    .menu-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .menu-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .menu-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+
+
+/* ================= GALLERY SECTION ================= */
+.gallery {
+  background-color: #fffaf4;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery .section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  color: #d4af37;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.gallery .section-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 3px;
+  background-color: #d4af37;
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+/* Flex container for equal-height image grid */
+.gallery .gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Each image wrapper */
+.gallery .gallery-item {
+  flex: 1 1 calc(25% - 15px);
+  min-width: 250px;
+  max-width: 350px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Image styling (uniform height with object-fit) */
+.gallery .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.92);
+}
+
+/* Hover effects */
+.gallery .gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.05) contrast(1.05);
+}
+
+.gallery .gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(212, 175, 55, 0.25);
+}
+
+/* Optional overlay caption */
+.gallery .gallery-item::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  padding: 8px 12px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.gallery .gallery-item:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .gallery .gallery-item {
+    flex: 1 1 calc(33.333% - 15px);
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery .gallery-item {
+    flex: 1 1 calc(50% - 10px);
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery .gallery-item {
+    flex: 1 1 100%;
+    height: 180px;
+  }
+}
+
+    /* ================= CTA SECTION ================= */
+    .cta {
+      background: linear-gradient(rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.6)),
+        url("assets/images/cta-bg.jpg") center/cover no-repeat;
+      position: relative;
+      color: #fff;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+
+    /* CTA Button */
+    .cta .btn-gold {
+      background-color: #d4af37;
+      color: #000;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 0.6rem 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta .btn-gold:hover {
+      background-color: #b9932e;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Subtle Overlay Animation */
+    @keyframes ctaFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(1.03);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .cta {
+      animation: ctaFadeIn 1.2s ease forwards;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ================= BELLA BITES NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Left: Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/logo.png" alt="Bella Bites Logo" height="50" class="me-2" />
+        <span class="fw-bold text-gold fs-4">Bella Bites</span>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars text-gold fs-3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase fw-semibold">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: Cart Icon -->
+      <div class="cart-icon position-relative d-none d-lg-block">
+        <button class="btn btn-link text-gold position-relative p-0" id="cartButton" aria-label="View cart">
+          <i class="fa-solid fa-bag-shopping fs-4"></i>
+          <span
+            class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-gold text-black"
+            id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- ================= END NAVBAR ================= -->
+
+
+  <!-- ================= Hero Section ================= -->
+  <section class="hero position-relative text-center text-white overflow-hidden">
+    <!-- Background Video -->
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero-poster.jpg">
+      <source src="assets/videos/hero_video.mp4" type="video/mp4">
+      <!-- Accessible fallback -->
+      Your browser does not support the video tag. Please upgrade to view this content.
+    </video>
+
+    <!-- Overlay for better text visibility -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="container position-relative z-1 py-5">
+      <h1 class="display-4 fw-bold mb-3">Indulge in Luxury at Bella Bites</h1>
+      <p class="lead mb-4">Where every sip and bite tells a story of passion, flavor, and perfection.</p>
+      <a href="#menu" class="btn btn-gold btn-lg">Explore Our Menu</a>
+    </div>
+  </section>
+
+
+  <!-- ================= About Section ================= -->
+  <section class="about py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-4">Welcome to Bella Bites</h2>
+      <p class="mx-auto w-75 text-muted">
+        Nestled in the heart of the city, Bella Bites is a sanctuary for coffee lovers and dessert enthusiasts.
+        Every dish is handcrafted with love, combining premium ingredients with timeless techniques.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= Menu Section ================= -->
+  <section id="menu" class="menu py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Our Signature Menu</h2>
+      <div class="row g-4">
+        <!-- Item 1 -->
+        <div class="col-md-4">
+          <div class="menu-item card border-0 shadow-sm text-center h-100">
+            <img src="assets/images/espresso.jpg" class="card-img-top" alt="Espresso">
+            <div class="card-body">
+              <h5 class="card-title">Espresso</h5>
+              <p class="card-text text-muted">Strong, bold, and full-bodied shot of pure coffee bliss.</p>
+              <p class="price fw-bold">$4.00</p>
+              <button class="btn btn-gold add-to-cart" data-name="Espresso" data-price="4"
+                data-img="assets/images/espresso.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="col-md-4">
+          <div class="menu-item card border-0 shadow-sm text-center h-100">
+            <img src="assets/images/cappuccino.jpg" class="card-img-top" alt="Cappuccino">
+            <div class="card-body">
+              <h5 class="card-title">Cappuccino</h5>
+              <p class="card-text text-muted">A perfect balance of espresso, steamed milk, and foam.</p>
+              <p class="price fw-bold">$5.50</p>
+              <button class="btn btn-gold add-to-cart" data-name="Cappuccino" data-price="5.5"
+                data-img="assets/images/cappuccino.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="col-md-4">
+          <div class="menu-item card border-0 shadow-sm text-center h-100">
+            <img src="assets/images/cheesecake.jpg" class="card-img-top" alt="Cheesecake">
+            <div class="card-body">
+              <h5 class="card-title">Classic Cheesecake</h5>
+              <p class="card-text text-muted">Creamy, rich, and indulgent with a buttery graham crust.</p>
+              <p class="price fw-bold">$6.00</p>
+              <button class="btn btn-gold add-to-cart" data-name="Cheesecake" data-price="6"
+                data-img="assets/images/cheesecake.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Gallery Section ================= -->
+  <section class="gallery py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-5">Taste the Elegance</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-caption="Cafe Interior">
+          <img src="assets/images/gallery1.jpg" alt="Cafe Interior">
+        </div>
+        <div class="gallery-item" data-caption="Barrista Brewing Coffee">
+          <img src="assets/images/gallery2.jpg" alt="Barrista Brewing Coffee">
+        </div>
+        <div class="gallery-item" data-caption="Desserts Display">
+          <img src="assets/images/gallery3.jpg" alt="Desserts Display">
+        </div>
+        <div class="gallery-item" data-caption="Espresso Art">
+          <img src="assets/images/gallery4.jpg" alt="Espresso Art">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= CTA Section ================= -->
+  <section class="cta text-center text-white py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Ready to Experience Bella Bites?</h2>
+      <a href="menu.html" class="btn btn-gold btn-lg">Order Now</a>
+    </div>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <footer class="py-4 bg-black text-center text-muted">
+    <div class="container">
+      <img src="assets/images/logo.png" alt="Bella Bites Logo" height="40" class="mb-3">
+      <p class="mb-0">© 2025 Bella Bites | Crafted with ❤️ and Coffee</p>
+    </div>
+  </footer>
+
+
+
+  <!-- ======================= CHECKOUT MODAL START ======================= -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg rounded-3">
+
+        <!-- Header -->
+        <div class="modal-header border-0 bg-dark text-white">
+          <h5 class="modal-title fw-semibold" id="checkoutModalLabel">
+            <i class="fa-solid fa-credit-card me-2 text-warning"></i> Checkout
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+            onclick="closeCheckout()"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body p-4">
+          <div class="row">
+            <!-- Left: Order Summary -->
+            <div class="col-lg-6 mb-4 mb-lg-0 border-end">
+              <h6 class="fw-bold mb-3 text-uppercase text-secondary">Your Order</h6>
+              <div id="checkoutSummary" class="small text-muted"></div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <h6 class="mb-0 fw-semibold text-dark">Total:</h6>
+                <span id="checkoutTotal" class="fw-bold fs-5 text-warning">Rs. 0</span>
+              </div>
+            </div>
+
+            <!-- Right: Customer Info -->
+            <div class="col-lg-6">
+              <h6 class="fw-bold mb-3 text-uppercase text-secondary">Billing Details</h6>
+              <form id="checkoutForm" novalidate>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" id="name" class="form-control" placeholder="Enter your name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" id="email" class="form-control" placeholder="name@example.com" required />
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" id="phone" class="form-control" placeholder="+92 300 0000000" required />
+                </div>
+                <div class="mb-3">
+                  <label for="address" class="form-label">Delivery Address</label>
+                  <textarea id="address" class="form-control" rows="2" placeholder="Street, City" required></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer border-0 justify-content-between">
+          <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal"
+            onclick="closeCheckout()">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-warning text-dark fw-semibold px-4" onclick="submitCheckout()">
+            <i class="fa-solid fa-check me-2"></i> Confirm Order
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ======================= CHECKOUT MODAL END ======================= -->
+
+  <!-- ================= CART SIDE DRAWER ================= -->
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer-header d-flex justify-content-between align-items-center px-3 py-3">
+      <h5 class="m-0 fw-bold text-gold">Your Cart</h5>
+      <button id="closeCart" class="btn-close btn-close-white" aria-label="Close"></button>
+    </div>
+
+    <div id="cartItems" class="cart-drawer-body px-3 py-2">
+      <p class="text-center text-muted mt-3">Your cart is empty.</p>
+    </div>
+
+    <div class="cart-drawer-footer px-3 py-3">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <span class="fw-semibold text-beige">Total:</span>
+        <span id="cartTotal" class="fw-bold text-gold">Rs. 0</span>
+      </div>
+      <button class="btn btn-gold w-100" id="checkoutBtn" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+  <div id="cartOverlay" class="cart-overlay"></div>
+
+
+
+  <!-- Bootstrap + JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>

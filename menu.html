@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Bites | Menu</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Explore Bella Bites menu — artisan coffee, handcrafted desserts, and refreshing beverages.">
+    <meta name="keywords" content="Bella Bites menu, coffee, desserts, beverages, café menu, online café">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/stylesheet/style.css">
+
+    <link rel="icon" href="assets/images/favicon.ico">
+
+    <style>
+
+        /* ---------- Section Title ---------- */
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2b2b2b;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #d4af37;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+        /* ---------- Menu Section ---------- */
+.menu-section {
+  background-color: #faf8f5;
+}
+
+/* ---------- Menu Cards ---------- */
+.product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.product-card img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+.product-card .card-body {
+  padding: 1.5rem 1rem;
+}
+
+.product-card .fw-bold {
+  font-family: "Playfair Display", serif;
+  color: #2b2b2b;
+  font-size: 1.3rem;
+}
+
+.product-card .text-muted {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* ---------- Price Highlight ---------- */
+.product-card p.text-muted.mb-1 {
+  color: #d4af37 !important;
+  font-weight: 600;
+}
+
+/* ---------- Add to Cart Button ---------- */
+.btn-gold {
+  background-color: #d4af37;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-gold:hover {
+  background-color: #b9932e;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- ================= BELLA BITES NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top py-3">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Left: Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="Bella Bites Logo" height="50" class="me-2" />
+                <span class="fw-bold text-gold fs-4">Bella Bites</span>
+            </a>
+
+            <!-- Center: Navigation Links -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars text-gold fs-3"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase fw-semibold">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right: Cart Icon -->
+            <div class="cart-icon position-relative d-none d-lg-block">
+                <button class="btn btn-link text-gold position-relative p-0" id="cartButton" aria-label="View cart">
+                    <i class="fa-solid fa-bag-shopping fs-4"></i>
+                    <span
+                        class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-gold text-black"
+                        id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- ================= END NAVBAR ================= -->
+
+
+    <!-- Menu Hero -->
+    <section class="hero-section text-center text-white d-flex align-items-center justify-content-center"
+        style="background: url('assets/images/menu-hero.jpg') center/cover no-repeat; height: 60vh;">
+        <div class="overlay"></div>
+        <div class="hero-content position-relative">
+            <h1 class="display-4 fw-bold">Our Menu</h1>
+            <p class="lead text-gold">Crafted with love, brewed with passion</p>
+        </div>
+    </section>
+
+    <!-- ================= MENU SECTION ================= -->
+    <section class="menu-section py-5">
+        <div class="container">
+
+            <!-- ☕ Coffee -->
+            <h2 class="section-title text-center mb-4">Coffee</h2>
+            <div class="row g-4 mb-5">
+
+                <!-- Espresso -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/espresso.jpg" loading="lazy"
+                            alt="Freshly brewed espresso coffee cup at Bella Bites café" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Espresso</h5>
+                            <p class="text-muted mb-1">$4.00</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Espresso" data-price="4.00"
+                                data-img="assets/images/espresso.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cappuccino -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/cappuccino.jpg" loading="lazy"
+                            alt="Creamy cappuccino with foam art at Bella Bites café" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Cappuccino</h5>
+                            <p class="text-muted mb-1">$5.50</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Cappuccino" data-price="5.50"
+                                data-img="assets/images/cappuccino.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latte -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/latte.jpg" loading="lazy"
+                            alt="Silky smooth latte with latte art served at Bella Bites" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Latte</h5>
+                            <p class="text-muted mb-1">$5.00</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Latte" data-price="5.00"
+                                data-img="assets/images/latte.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Americano -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/americano.jpg" loading="lazy"
+                            alt="Classic Americano coffee in luxury glass cup" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Americano</h5>
+                            <p class="text-muted mb-1">$4.50</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Americano" data-price="4.50"
+                                data-img="assets/images/americano.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mocha -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/mocha.jpg" loading="lazy"
+                            alt="Rich chocolate mocha topped with whipped cream" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Mocha</h5>
+                            <p class="text-muted mb-1">$5.25</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Mocha" data-price="5.25"
+                                data-img="assets/images/mocha.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Iced Coffee -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/iced-coffee.jpg" loading="lazy"
+                            alt="Iced coffee with cream swirl and ice cubes" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Iced Coffee</h5>
+                            <p class="text-muted mb-1">$4.75</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Iced Coffee" data-price="4.75"
+                                data-img="assets/images/iced-coffee.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🍰 Desserts -->
+            <h2 class="section-title text-center mb-4">Desserts</h2>
+            <div class="row g-4 mb-5">
+
+                <!-- Classic Cheesecake -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/cheesecake.jpg" loading="lazy"
+                            alt="Classic cheesecake with graham cracker crust at Bella Bites" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Classic Cheesecake</h5>
+                            <p class="text-muted mb-1">$6.00</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Classic Cheesecake" data-price="6.00"
+                                data-img="assets/images/cheesecake.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chocolate Cake -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/chocolate-cake.jpg" loading="lazy"
+                            alt="Decadent chocolate cake slice with ganache frosting" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Chocolate Cake</h5>
+                            <p class="text-muted mb-1">$5.75</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Chocolate Cake" data-price="5.75"
+                                data-img="assets/images/chocolate-cake.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Red Velvet -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/red-velvet.jpg" loading="lazy"
+                            alt="Red velvet cake with cream cheese frosting" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Red Velvet Cake</h5>
+                            <p class="text-muted mb-1">$5.50</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Red Velvet Cake" data-price="5.50"
+                                data-img="assets/images/red-velvet.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Macarons -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/macarons.jpg" loading="lazy"
+                            alt="Colorful French macarons in assorted flavors" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Assorted Macarons</h5>
+                            <p class="text-muted mb-1">$4.50</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Assorted Macarons" data-price="4.50"
+                                data-img="assets/images/macarons.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 🍹 Beverages -->
+            <h2 class="section-title text-center mb-4">Beverages</h2>
+            <div class="row g-4">
+
+                <!-- Matcha Latte -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/matcha-latte.jpg" loading="lazy"
+                            alt="Vibrant green matcha latte with foam art" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Matcha Latte</h5>
+                            <p class="text-muted mb-1">$4.75</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Matcha Latte" data-price="4.75"
+                                data-img="assets/images/matcha-latte.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hot Chocolate -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/hot-chocolate.jpg" loading="lazy"
+                            alt="Hot chocolate with whipped cream and cocoa sprinkles" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Hot Chocolate</h5>
+                            <p class="text-muted mb-1">$4.25</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Hot Chocolate" data-price="4.25"
+                                data-img="assets/images/hot-chocolate.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Iced Tea -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/iced-tea.jpg" loading="lazy" alt="Refreshing iced tea with lemon slices"
+                            class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Iced Tea</h5>
+                            <p class="text-muted mb-1">$3.50</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Iced Tea" data-price="3.50"
+                                data-img="assets/images/iced-tea.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smoothie -->
+                <div class="col-md-3 col-sm-6" data-product>
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="assets/images/smoothie.jpg" loading="lazy"
+                            alt="Mixed berry smoothie in glass jar with straw" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Fruit Smoothie</h5>
+                            <p class="text-muted mb-1">$5.00</p>
+                            <button class="btn btn-gold add-to-cart" data-name="Fruit Smoothie" data-price="5.00"
+                                data-img="assets/images/smoothie.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-4 bg-black text-center text-muted">
+        <div class="container">
+            <img src="assets/images/logo.png" alt="Bella Bites Logo" height="40" class="mb-3">
+            <p class="mb-0">© 2025 Bella Bites | Crafted with ❤️ and Coffee</p>
+        </div>
+    </footer>
+
+    <!-- ================= CART SIDE DRAWER ================= -->
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-drawer-header d-flex justify-content-between align-items-center px-3 py-3">
+            <h5 class="m-0 fw-bold text-gold">Your Cart</h5>
+            <button id="closeCart" class="btn-close btn-close-white" aria-label="Close"></button>
+        </div>
+
+        <div id="cartItems" class="cart-drawer-body px-3 py-2">
+            <p class="text-center text-muted mt-3">Your cart is empty.</p>
+        </div>
+
+        <div class="cart-drawer-footer px-3 py-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fw-semibold text-beige">Total:</span>
+                <span id="cartTotal" class="fw-bold text-gold">Rs. 0</span>
+            </div>
+            <button class="btn btn-gold w-100" id="checkoutBtn" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+
+    <!-- Bootstrap + JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- ======================= CHECKOUT MODAL START ======================= -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true"
+        data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-3">
+
+                <!-- Header -->
+                <div class="modal-header border-0 bg-dark text-white">
+                    <h5 class="modal-title fw-semibold" id="checkoutModalLabel">
+                        <i class="fa-solid fa-credit-card me-2 text-warning"></i> Checkout
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="closeCheckout()"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body p-4">
+                    <div class="row">
+                        <!-- Left: Order Summary -->
+                        <div class="col-lg-6 mb-4 mb-lg-0 border-end">
+                            <h6 class="fw-bold mb-3 text-uppercase text-secondary">Your Order</h6>
+                            <div id="checkoutSummary" class="small text-muted"></div>
+                            <hr />
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0 fw-semibold text-dark">Total:</h6>
+                                <span id="checkoutTotal" class="fw-bold fs-5 text-warning">Rs. 0</span>
+                            </div>
+                        </div>
+
+                        <!-- Right: Customer Info -->
+                        <div class="col-lg-6">
+                            <h6 class="fw-bold mb-3 text-uppercase text-secondary">Billing Details</h6>
+                            <form id="checkoutForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" id="name" class="form-control" placeholder="Enter your name"
+                                        required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" class="form-control" placeholder="name@example.com"
+                                        required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="phone" class="form-control" placeholder="+92 300 0000000"
+                                        required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Delivery Address</label>
+                                    <textarea id="address" class="form-control" rows="2" placeholder="Street, City"
+                                        required></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer border-0 justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal"
+                        onclick="closeCheckout()">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-warning text-dark fw-semibold px-4" onclick="submitCheckout()">
+                        <i class="fa-solid fa-check me-2"></i> Confirm Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======================= CHECKOUT MODAL END ======================= -->
+
+
+</body>
+
+</html>

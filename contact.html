@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Bites | Contact Us</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Get in touch with Bella Bites Café — we’d love to hear from you. Visit us or drop a message online.">
+    <meta name="keywords" content="Bella Bites contact, café location, customer support, coffee shop contact">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/stylesheet/style.css">
+
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+
+<body>
+    <!-- ================= BELLA BITES NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top py-3">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Left: Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="Bella Bites Logo" height="50" class="me-2" />
+                <span class="fw-bold text-gold fs-4">Bella Bites</span>
+            </a>
+
+            <!-- Center: Navigation Links -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars text-gold fs-3"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase fw-semibold">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right: Cart Icon -->
+            <div class="cart-icon position-relative d-none d-lg-block">
+                <button class="btn btn-link text-gold position-relative p-0" id="cartButton" aria-label="View cart">
+                    <i class="fa-solid fa-bag-shopping fs-4"></i>
+                    <span
+                        class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-gold text-black"
+                        id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- ================= END NAVBAR ================= -->
+
+<!-- Contact Hero -->
+    <section class="hero-section text-center text-white d-flex align-items-center justify-content-center"
+        style="background: url('assets/images/hero-bg.jpg') center/cover no-repeat; height: 60vh;">
+        <div class="overlay"></div>
+        <div class="hero-content position-relative">
+            <h1 class="display-4 fw-bold">Contact Us</h1>
+            <p class="lead text-gold">From Bean to Bite — Our Story Is Brewed with Love.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section py-5 mt-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title mb-3">Get in Touch</h2>
+                <p class="text-muted">We’d love to hear from you — drop us a message, visit our café, or call anytime!
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-lg-5 mb-4">
+                    <div class="bg-black text-white rounded p-4 h-100 shadow-sm">
+                        <h5 class="mb-3 text-gold">Contact Information</h5>
+                        <p><i class="fa-solid fa-location-dot text-gold me-2"></i> 45 Park Avenue, Karachi, Pakistan</p>
+                        <p><i class="fa-solid fa-phone text-gold me-2"></i> +92 300 1234567</p>
+                        <p><i class="fa-solid fa-envelope text-gold me-2"></i> hello@bellabites.com</p>
+                        <h6 class="mt-4 text-gold">Opening Hours</h6>
+                        <p>Mon – Sun: 8:00 AM – 11:00 PM</p>
+                        <div class="social-icons mt-3">
+                            <a href="#" class="text-gold me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                            <a href="#" class="text-gold me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                            <a href="#" class="text-gold"><i class="fab fa-twitter fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" id="name" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea id="message" rows="5" class="form-control" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-gold w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-black text-center text-muted">
+        <div class="container">
+            <img src="assets/images/logo.png" alt="Bella Bites Logo" height="40" class="mb-3">
+            <p class="mb-0">© 2025 Bella Bites | Crafted with ❤️ and Coffee</p>
+        </div>
+    </footer>
+
+    <!-- ================= CART SIDE DRAWER ================= -->
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-drawer-header d-flex justify-content-between align-items-center px-3 py-3">
+            <h5 class="m-0 fw-bold text-gold">Your Cart</h5>
+            <button id="closeCart" class="btn-close btn-close-white" aria-label="Close"></button>
+        </div>
+
+        <div id="cartItems" class="cart-drawer-body px-3 py-2">
+            <p class="text-center text-muted mt-3">Your cart is empty.</p>
+        </div>
+
+        <div class="cart-drawer-footer px-3 py-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fw-semibold text-beige">Total:</span>
+                <span id="cartTotal" class="fw-bold text-gold">Rs. 0</span>
+            </div>
+            <button class="btn btn-gold w-100" id="checkoutBtn" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+
+    <!-- Bootstrap + JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Contact Form Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! We’ll get back to you soon.');
+            this.reset();
+        });
+    </script>
+
+
+</body>
+
+</html>
