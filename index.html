@@ -18,23 +18,23 @@
   <meta property="og:type" content="website">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CafeOrCoffeeShop",
-    "name": "Bella Bites",
-    "image": "https://bella-bites.vercel.app/assets/images/logo.png",
-    "description": "Luxury café offering handcrafted coffee, artisan desserts, and a premium café experience. Order online or visit our café.",
-    "address": {
-      "addressLocality": "Karachi",
-      "addressCountry": "PK"
-    },
-    "telephone": "+92 300 1234567",
-    "url": "https://bella-bites.vercel.app",
-    "menu": "https://bella-bites.vercel.app/menu.html",
-    "servesCuisine": ["Coffee", "Desserts", "Bakery", "Café"],
-    "priceRange": "$$"
-  }
-  </script>
+{
+"@context": "https://schema.org",
+"@type": "CafeOrCoffeeShop",
+"name": "Bella Bites",
+"image": "https://bella-bites.vercel.app/assets/images/logo.png",
+"description": "Luxury café offering handcrafted coffee, artisan desserts, and a premium café experience. Order online or visit our café.",
+"address": {
+"addressLocality": "Karachi",
+"addressCountry": "PK"
+},
+"telephone": "+92 300 1234567",
+"url": "https://bella-bites.vercel.app",
+"menu": "https://bella-bites.vercel.app/menu.html",
+"servesCuisine": ["Coffee", "Desserts", "Bakery", "Café"],
+"priceRange": "$$"
+}
+</script>
 
 
   <!-- Bootstrap 5 -->
@@ -742,12 +742,127 @@
   <section class="cta text-center text-white py-5">
     <div class="container">
       <h2 class="fw-bold mb-4">Ready to Experience Bella Bites?</h2>
-      <p class="mx-auto w-75">
-        Craving something extraordinary? Explore our menu and treat yourself to a taste of Bella Bites today!
+      <p class="lead mb-4">
+        Discover why Bella Bites is the <strong>best café for handcrafted coffee and artisan desserts</strong>.
+        Whether you’re craving a creamy cappuccino, a rich chocolate cake, or a relaxing café atmosphere,
+        we invite you to <a href="menu.html" class="text-gold fw-semibold">explore our menu</a> and
+        <a href="contact.html" class="text-gold fw-semibold">visit us today</a>.
       </p>
       <a href="menu.html" class="btn btn-gold btn-lg">Order Now</a>
     </div>
   </section>
+
+  <!-- ================= FAQ Section ================= -->
+  <section class="faq py-5 bg-light">
+    <div class="container">
+      <div class="container text-center py-3">
+        <h2 class="section-title mb-5">Frequently Asked Questions</h2>
+        <p class="text-center text-muted mb-5 w-75 mx-auto">
+          Find quick answers about <strong>Bella Bites café</strong> — from our coffee and desserts to online ordering
+          and
+          delivery.
+          We’re here to make your café experience smoother and sweeter!
+        </p>
+      </div>
+
+      <div class="accordion" id="faqAccordion">
+        <!-- FAQ 1 -->
+        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+          <h3 class="accordion-header" id="faqHeadingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne"
+              aria-expanded="true" aria-controls="faqOne">
+              What makes Bella Bites different from other cafés?
+            </button>
+          </h3>
+          <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">
+              At <strong>Bella Bites</strong>, we focus on handcrafted coffee, freshly baked desserts, and warm
+              hospitality.
+              Every drink and pastry is made from premium ingredients to create a luxurious café experience unlike any
+              other.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+          <h3 class="accordion-header" id="faqHeadingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo"
+              aria-expanded="false" aria-controls="faqTwo">
+              Do you offer online ordering or home delivery?
+            </button>
+          </h3>
+          <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">
+              Yes! You can <a href="menu.html" class="text-gold fw-semibold">order online</a> directly from our website.
+              Choose your favorite coffee, dessert, or pastry, add it to your cart, and we’ll have it ready for pickup
+              or delivery.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+          <h3 class="accordion-header" id="faqHeadingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+              Where is Bella Bites located?
+            </button>
+          </h3>
+          <div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">
+              We’re located in the heart of the city, making Bella Bites the perfect spot to unwind with a cup of
+              freshly brewed coffee.
+              Visit our <a href="contact.html" class="text-gold fw-semibold">Contact page</a> for directions, hours, and
+              map location.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+          <h3 class="accordion-header" id="faqHeadingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour"
+              aria-expanded="false" aria-controls="faqFour">
+              What are your most popular menu items?
+            </button>
+          </h3>
+          <div id="faqFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">
+              Our bestsellers include the <strong>Cappuccino</strong>, <strong>Classic Cheesecake</strong>, and
+              <strong>Butter Croissant</strong>. Don’t miss our <a href="menu.html"
+                class="text-gold fw-semibold">Signature Menu</a>
+              for more delicious options.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+          <h3 class="accordion-header" id="faqHeadingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive"
+              aria-expanded="false" aria-controls="faqFive">
+              Do you cater for events or corporate meetings?
+            </button>
+          </h3>
+          <div id="faqFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">
+              Yes, Bella Bites offers <strong>custom café catering</strong> for birthdays, small events, and corporate
+              gatherings.
+              Get in touch through our <a href="contact.html" class="text-gold fw-semibold">Contact Us</a> page for
+              details and packages.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ================= Footer ================= -->
   <footer class="py-4 bg-black text-center text-muted">
